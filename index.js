@@ -8,8 +8,12 @@ const palindrome = s => s == s.split('').reverse().join('')
 
 const vowelCount = s => s.toLowerCase().replace(/[^aeiou]/gm, '').length
 
+const upperCount = s => s.replace(/[^A-Z]/gm, '').length
 
-const compute = (left, operator, right) => {	"+": sum, "-": sub, "*": mul, "/": div}[operator](left, right)
-	
+const numCount = s => s.replace(/[^0-9]/gm, '').length
+
+const ops = {"+":sum, "-": sub, "*": mul, "/": div}
+const compute = (left, operator, right) => ops[operator](left, right)
+
 
 
