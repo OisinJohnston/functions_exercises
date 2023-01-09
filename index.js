@@ -16,4 +16,3 @@ const ops = {"+":sum, "-": sub, "*": mul, "/": div}
 const compute = (left, operator, right) => ops[operator](left, right)
 
 
-
