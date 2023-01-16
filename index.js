@@ -17,26 +17,24 @@ const compute = (left, operator, right) => ops[operator](left, right)
 
 const calcMean = arr => arr.reduce((ps, a) => ps+a)/arr.length
 
-
-
+const getLargest = dict =>  Object.keys(dict).reduce((a, b) => dict[a] > dict[b] ? a : b)
 
 
 function calcFrequency(arr) {
-	
 	counts = {}
-	Array.from(new Set(arr)).forEach((x) => {
-		counts[x] = 0;
+	arr.forEach((x) => {
+		if (x in counts) {
+			counts[x]++
+		} else {
+			counts[x] = 0;
+		}
 	})
-	for (i=0; i<arr.length; i++) {
-		counts[arr[i]]++
-	}
 	return counts
 }
 
 function calcMode(arr) {
 	resp = []
 	counts = calcFrequency(arr)
-	getLargest = (dict) =>  Object.keys(dict).reduce((a, b) => dict[a] > dict[b] ? a : b)
 	largest = getLargest(counts)
 	largest_val = counts[largest]
 	resp.push(Number(largest))
