@@ -49,5 +49,8 @@ function calcMode(arr) {
 }
 
 
+const calcMedian = (arr) => Boolean(arr.length&1) ? [arr.sort()[(arr.length-1)/2]] : [arr.sort()[((arr.length)/2)-1], arr.sort()[(arr.length)/2]]
+
+
 
 
